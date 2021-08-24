@@ -48,6 +48,19 @@ summary {
   width: 85vw;
   font-size: 1.1rem;
   border-radius: 2rem;
+  transition: all 0.5s ease-in-out;
+  animation: show 0.5s forwards;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .card__title {
@@ -72,21 +85,69 @@ summary {
   justify-content: space-between;
 }
 
-.card__list--item details summary img {
-  object-fit: contain;
+.card__list--item details summary:hover {
+  cursor: pointer;
+  color: var(--soft-red);
 }
 
-.card__list--item details[open] summary {
+.card__list--item details summary img {
+  object-fit: contain;
+  animation: rotateImg 0.5s forwards;
+}
+
+@keyframes rotateImg {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+
+.card__list--item details[open] summary span {
   color: black;
   font-weight: 700;
+  animation: slideDown 0.5s forwards;
 }
 
 .card__list--item details[open] summary img {
-  transform: rotate(180deg);
+  animation: rotateArrow 0.5s forwards;
+}
+
+@keyframes rotateArrow {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(180deg);
+  }
 }
 
 .card__list--item details p {
   color: var(--dark-grayish-blue);
   font-size: 1rem;
   padding-right: 2rem;
+  animation: slideDown 0.5s forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 200px;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    max-height: 200px;
+  }
+  to {
+    opacity: 1;
+    max-height: 200px;
+  }
 }
