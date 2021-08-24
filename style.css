@@ -1,0 +1,92 @@
+:root {
+  /* PRIMARY COLORS */
+  --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  /* GRADIENT */
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+
+  /* NEUTRAL COLORS */
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+  /* DIVIDERS */
+  --light-grayish-blue: hsl(240, 5%, 91%);
+
+  /* FONT */
+  font-size: 12px;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-image: linear-gradient(var(--soft-violet), var(--soft-blue));
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+summary {
+  list-style: none;
+}
+
+.card {
+  background-color: white;
+  width: 85vw;
+  font-size: 1.1rem;
+  border-radius: 2rem;
+}
+
+.card__title {
+  text-align: center;
+  font-size: 2.75rem;
+  font-weight: 700;
+}
+
+.card__list {
+  padding: 0 2rem 3rem 2rem;
+}
+
+.card__list--item {
+  border-bottom: 1px solid var(--light-grayish-blue);
+  padding: 1.5rem 0;
+}
+
+.card__list--item details summary {
+  color: var(--very-dark-grayish-blue);
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__list--item details summary img {
+  object-fit: contain;
+}
+
+.card__list--item details[open] summary {
+  color: black;
+  font-weight: 700;
+}
+
+.card__list--item details[open] summary img {
+  transform: rotate(180deg);
+}
+
+.card__list--item details p {
+  color: var(--dark-grayish-blue);
+  font-size: 1rem;
+  padding-right: 2rem;
+}
