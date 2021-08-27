@@ -54,21 +54,29 @@ summary {
   border-radius: 2rem;
   transition: all 0.5s ease-in-out;
   animation: show 0.5s forwards;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.5);
+  position: relative;
 }
 
 .card__img {
   position: relative;
 }
 
-.card__img--top {
+.card__img--topMb {
   position: absolute;
-  bottom: -7.4rem;
+  top: -9rem;
 }
 
-.card__img--bg {
+.card__img--bgMb {
   position: absolute;
   left: 2.5rem;
   bottom: -8.4rem;
+}
+
+.card__img--bgDk,
+.card__img--topDk,
+.card__img--boxDk {
+  display: none;
 }
 
 @keyframes show {
@@ -169,5 +177,63 @@ summary {
   to {
     opacity: 1;
     max-height: 200px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    position: relative;
+  }
+
+  .card {
+    width: 1024px;
+    display: flex;
+    justify-content: flex-end;
+    background-image: url(images/bg-pattern-desktop.svg);
+    background-position: -510px -300px;
+    background-repeat: no-repeat;
+  }
+
+  .card__img--topMb,
+  .card__img--bgMb {
+    display: none;
+  }
+
+  .card__img--boxDk {
+    display: block;
+    min-width: 100%;
+    position: absolute;
+  }
+
+  .img__overflow-hidden {
+    position: absolute;
+    min-width: 55%;
+    min-height: 100%;
+    left: 0;
+    overflow: hidden;
+    object-fit: cover;
+  }
+
+  .card__img--topDk {
+    min-width: 100%;
+    display: block;
+    transform: translate(-105px, 10px);
+  }
+
+  .card__img--boxDk {
+    min-width: 25%;
+    left: -10.5rem;
+    top: 11rem;
+    overflow: visible;
+    z-index: 99;
+  }
+
+  .card__content {
+    padding: 3rem 3rem 3rem 0rem;
+  }
+
+  .card__title {
+    text-align: left;
+    padding: 0 0 0 2rem;
   }
 }
