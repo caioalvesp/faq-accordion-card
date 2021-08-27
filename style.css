@@ -26,11 +26,10 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
   background-image: linear-gradient(var(--soft-violet), var(--soft-blue));
 }
 
@@ -43,13 +42,33 @@ summary {
   list-style: none;
 }
 
+.container {
+  padding-top: 10rem;
+  padding-bottom: 4rem;
+}
+
 .card {
   background-color: white;
-  width: 85vw;
+  width: 300px;
   font-size: 1.1rem;
   border-radius: 2rem;
   transition: all 0.5s ease-in-out;
   animation: show 0.5s forwards;
+}
+
+.card__img {
+  position: relative;
+}
+
+.card__img--top {
+  position: absolute;
+  bottom: -7.4rem;
+}
+
+.card__img--bg {
+  position: absolute;
+  left: 2.5rem;
+  bottom: -8.4rem;
 }
 
 @keyframes show {
@@ -67,6 +86,7 @@ summary {
   text-align: center;
   font-size: 2.75rem;
   font-weight: 700;
+  padding-top: 10rem;
 }
 
 .card__list {
