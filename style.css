@@ -230,6 +230,8 @@ summary {
 
   .card__content {
     padding: 3rem 3rem 3rem 0rem;
+    min-width: 50%;
+    max-width: 50%;
   }
 
   .card__title {
